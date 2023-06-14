@@ -26,6 +26,9 @@ app.use("/news", NewsRouter);
 app.use("/comments", CommentRouter);
 app.use("/email", SendEmail);
 app.use("/", TokenRouter);
+app.get("/", (req, res) => {
+  res.send("Test Server!");
+});
 
 process.on("SIGINT", async () => {
   disConnectDb();
